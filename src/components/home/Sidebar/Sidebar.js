@@ -9,7 +9,7 @@ import Loading from '../../../shared/Loading';
 
 
 const Sidebar = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     if (loading) {
         return <Loading />
     }
@@ -25,9 +25,9 @@ const Sidebar = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                    <ul className="menu p-4 overflow-y-auto w-72 bg-base-100 text-base-content">
                         <h2 className='text-lg mt-3 font-bold'>Company Name</h2>
-                        <div className='flex justify-start items-center'>
+                        <div className='flex justify-start items-center w-52'>
                             <AiOutlineSearch className='absolute pl-2 text-3xl' />
                             <input className='my-4 py-2 px-1 border rounded-full pl-8' type="text" name="" placeholder='Search Modules'></input>
                         </div>
@@ -35,7 +35,7 @@ const Sidebar = () => {
                         <li><Link to="/">View Clients</Link></li>
                         <li><Link to="/addclient">Add Client</Link></li>
 
-                        <div className='absolute left-0 bottom-0 w-72'>
+                        <div className='absolute left-0 bottom-0 w-64'>
                             <div className='flex justify-between items-center px-3 pb-4'>
                                 <div>
                                     <h2 className='font-bold text-sm'>{user?.displayName}</h2>

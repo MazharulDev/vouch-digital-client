@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { MdKeyboardArrowRight } from "react-icons/md"
 import { BsPlusSquareDotted } from "react-icons/bs"
@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 const AddClient = () => {
     const navigate = useNavigate()
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const img = data.image[0];
         const formData = new FormData();
@@ -58,7 +58,8 @@ const AddClient = () => {
     return (
         <div>
             <h2 className='text-2xl font-bold my-5 px-3'>Add Client</h2>
-            <div className='m-5 bg-white rounded-lg p-4'>
+            <p className='px-3 font '>Client Master / Add Client / <span className='text-gray-400'>Create profile</span></p>
+            <div className='m-5 mt-8 bg-white rounded-lg p-4'>
                 <h2 className='text-lg font-bold'>Create a profile</h2>
                 <p>Add some basic information to related the client</p>
                 <div>
