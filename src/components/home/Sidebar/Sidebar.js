@@ -5,11 +5,14 @@ import { signOut } from 'firebase/auth';
 import auth from '../../../firebase.init';
 import { FiLogOut } from 'react-icons/fi'
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Loading from '../../../shared/Loading';
 
 
 const Sidebar = () => {
     const [user, loading, error] = useAuthState(auth);
-    console.log(user);
+    if (loading) {
+        return <Loading />
+    }
     return (
         <div>
             <div className="drawer drawer-mobile">

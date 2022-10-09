@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddSuccess from './components/home/AddSuccess/AddSuccess';
 import AddClient from './components/home/Clients/AddClient';
 import ViewClients from './components/home/Clients/ViewClients';
 import Home from './components/home/Home';
@@ -21,6 +22,7 @@ function App() {
         }>
           <Route index element={<ViewClients />} />
           <Route path='/addclient' element={<AddClient />} />
+          <Route path='/clientaddsuccess' element={<AddSuccess />} />
         </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />

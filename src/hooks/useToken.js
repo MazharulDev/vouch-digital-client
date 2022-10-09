@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 const useToken = user => {
     const [userToken, setUserToken] = useState('');
-    console.log(userToken);
     useEffect(() => {
         const email = user?.user?.email
         const currentUser = { email: email }
