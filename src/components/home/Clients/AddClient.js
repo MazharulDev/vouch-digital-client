@@ -6,9 +6,11 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const AddClient = () => {
+    const [Loading, setLoading] = useState(false)
     const navigate = useNavigate()
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
+        setLoading(true)
         const img = data.image[0];
         const formData = new FormData();
         formData.append('image', img);
@@ -46,7 +48,7 @@ const AddClient = () => {
                 })
                     .then(res => res.json())
                     .then(output => {
-                        console.log(output);
+                        setLoading(false)
                         if (output.insertedId) {
                             navigate("/clientaddsuccess")
                         } else {
@@ -130,10 +132,12 @@ const AddClient = () => {
                             <input className='p-2 rounded-md bg-white border' type="text" {...register("gstNumber", { required: true })} placeholder="GST Number *" />
                             <input className='p-2 rounded-md bg-white border' type="text" {...register("faxNumber")} placeholder="Fax Number" />
                         </div>
-                        <div className='flex justify-start items-center px-3 gap-3 py-2 bg-blue-800 hover:bg-blue-700 text-white mx-10 mt-4 rounded-lg cursor-pointer w-48'>
-                            <input className='cursor-pointer' type="submit" value="Save & Continue" />
-                            <MdKeyboardArrowRight />
-                        </div>
+                        {
+                            Loading ? <p className='mx-5 text-2xl font-bold p-3'>Loading...</p> : <div className='flex justify-start items-center px-3 gap-3 py-2 bg-blue-800 hover:bg-blue-700 text-white mx-10 mt-4 rounded-lg cursor-pointer w-48'>
+                                <input className='cursor-pointer' type="submit" value="Save & Continue" />
+                                <MdKeyboardArrowRight />
+                            </div>
+                        }
                     </form>
                 </div>
             </div>

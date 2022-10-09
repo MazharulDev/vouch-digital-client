@@ -45,9 +45,10 @@ const Login = () => {
     }
     return (
         <div className='flex justify-center items-center h-screen'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-96 bg-base-100">
                 <div className="card-body">
-                    <h2 className="card-title text-primary">Login</h2>
+                    <h2 className="text-3xl font-bold text-center">Welcome</h2>
+                    <p className='text-center'>Enter your Username and password</p>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
@@ -116,7 +117,7 @@ const Login = () => {
                             <h2 className='my-3'><Link className='text-blue-600 hover:underline' to='/forgotPassword'>Forgot password?</Link></h2>
                         </div>
 
-                        <input className='btn btn-primary text-white w-full' type="submit" value="Login" />
+                        <input className='btn bg-blue-600 hover:bg-blue-700 text-white w-full' type="submit" value="Login" />
                     </form>
                     <p><small>New to StoreForPc ?  <Link className='text-blue-500 hover:underline' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
