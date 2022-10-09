@@ -11,7 +11,7 @@ const ViewClients = () => {
     const [clients, setClients] = useState([]);
     useEffect(() => {
         const getEmail = async () => {
-            const url = `http://localhost:5000/clients`
+            const url = `https://vouch-digital.onrender.com/clients`
             try {
                 const { data } = await axios.get(url, {
                     headers: {

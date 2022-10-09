@@ -38,7 +38,7 @@ const AddClient = () => {
                     img: img
                 }
                 //send database
-                fetch('http://localhost:5000/clients', {
+                fetch('https://vouch-digital.onrender.com/clients', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
